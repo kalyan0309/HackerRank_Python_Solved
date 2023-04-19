@@ -1,0 +1,11 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import Counter
+n = int(input())
+tot_cost=0
+available_shoes = Counter(list(map(int,input().split())))
+for _ in range(int(input())):
+    size,cost=map(int,input().split())
+    if available_shoes[size]:
+        tot_cost+=cost
+        available_shoes[size]-=1
+print(tot_cost)
